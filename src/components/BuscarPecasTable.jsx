@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { FiSearch } from "react-icons/fi"; // Importa o ícone de lupa
+
 
 const TableContainer = styled.div`
   width: auto;

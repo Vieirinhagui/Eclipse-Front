@@ -69,8 +69,8 @@ const ImageFooter = styled.img`
 const Login = () => {
     return (
         <div >
-            <FullPageLogin>
-                <img src="/logo.png" alt="" />
+            <FullPageLogin >
+                <img src="/logo.png" alt="" loading="lazy"/>
                 <FormContainer >
                     <h2>Bem vindo de volta!</h2> <br />
                     <Label >

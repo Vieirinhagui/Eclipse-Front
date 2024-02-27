@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ModalAprovarAvaliador from "./ModalAprovar.jsx";
+
 const TableContainer = styled.div`
   width: auto;
   min-width: 50vw;
@@ -49,54 +51,69 @@ const Table = styled.table`
       border: none;
       border-radius: 7px;
       cursor: pointer;
+      font-weight: bold;
+      &:hover {
+        background-color: #416b44;
+      }
     }
   }
 `;
+
 const AprovarTable = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setOpenModal(!openModal);
+  };
+  
   return (
-    <TableContainer>
-      <Table>
-        <thead>
-          <tr>
-            <th>Matrícula</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Status Cadastro</th>
-            <th>Ação</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>AVA001</td>
-            <td>Guilherme Vieira</td>
-            <td>vieiragui147@gmail.com</td>
-            <td>Pendente</td>
-            <td>
-              <button>Aprovar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>AVA001</td>
-            <td>Guilherme Vieira</td>
-            <td>vieiragui147@gmail.com</td>
-            <td>Pendente</td>
-            <td>
-              <button>Aprovar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>DEF001</td>
-            <td>Guilherme Vieira</td>
-            <td>vieiragui147@gmail.com</td>
-            <td>Pendente</td>
-            <td>
-              <button>Aprovar</button>
-            </td>
-          </tr>
-        </tbody>
-      </Table>
-    </TableContainer>
+    <>
+      {openModal && <ModalAprovarAvaliador closeModal={handleOpenModal} />}
+      <TableContainer>
+        <Table>
+          <thead>
+            <tr>
+              <th>Matrícula</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Status Cadastro</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>AVA001</td>
+              <td>Guilherme Vieira</td>
+              <td>vieiragui147@gmail.com</td>
+              <td>Pendente</td>
+              <td>
+                <button onClick={handleOpenModal}>Aprovar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>AVA001</td>
+              <td>Guilherme Vieira</td>
+              <td>vieiragui147@gmail.com</td>
+              <td>Pendente</td>
+              <td>
+                <button onClick={handleOpenModal}>Aprovar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>DEF001</td>
+              <td>Guilherme Vieira</td>
+              <td>vieiragui147@gmail.com</td>
+              <td>Pendente</td>
+              <td>
+                <button onClick={handleOpenModal}>Aprovar</button>
+              </td>
+            </tr>
+          </tbody>
+        </Table>
+      </TableContainer>
+    </>
   );
 };
 
 export default AprovarTable;
+

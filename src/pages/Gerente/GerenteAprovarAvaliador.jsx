@@ -4,7 +4,7 @@ import AprovarTable from "../../components/AprovarTable";
 const GerenteAprovarAvaliador = () => {
   return (
     <div>
-      <AprovarTable />
+      <AprovarTable/>
     </div>
   );
 };

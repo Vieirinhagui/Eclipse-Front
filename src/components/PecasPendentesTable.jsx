@@ -44,6 +44,10 @@ const Table = styled.table`
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-weight: bold;
+      &:hover{
+        background-color: #416b44;
+      }
     }
   }
 `;

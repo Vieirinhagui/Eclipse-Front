@@ -3,11 +3,11 @@ import BuscarTable from "../../components/BuscarTable";
 import styled from "styled-components";
 
 const SearchContainer = styled.div`
-  width: 400px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   gap: 8px;
   border-radius: 15px;
   box-shadow: 0 0 16px 4px rgba(0, 0, 0, 0.3);
@@ -40,8 +40,8 @@ const GerenteBuscarCorregedores = () => {
   return (
     <div>
       <SearchContainer>
-        <p>Filtrar por:</p>
         <InputContainer>
+        <p>Filtrar por:</p>
           <div>
             <label htmlFor="busca-nome">Nome</label>
             <InputButton type="radio" name="busca" id="busca-nome" />

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ModalDetalhes from "./ModalDetalhes.jsx";
+
 const TableContainer = styled.div`
   width: auto;
   min-width: 50vw;
@@ -49,12 +51,25 @@ const Table = styled.table`
       border: none;
       border-radius: 7px;
       cursor: pointer;
+      font-weight: bold;
+      &:hover {
+        background-color: #416b44;
+      }
     }
   }
 `;
+
 const BuscarTable = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setOpenModal(!openModal);
+  };
+  
   return (
-    <TableContainer>
+    <>
+    {openModal && <ModalDetalhes closeModal={handleOpenModal} />}
+      <TableContainer>
       <Table>
         <thead>
           <tr>
@@ -70,7 +85,7 @@ const BuscarTable = () => {
             <td>Guilherme Vieira</td>
             <td>vieiragui147@gmail.com</td>
             <td>
-              <button>Detalhes</button>
+              <button onClick={handleOpenModal}>Detalhes</button>
             </td>
           </tr>
           <tr>
@@ -78,7 +93,7 @@ const BuscarTable = () => {
             <td>Guilherme Vieira</td>
             <td>vieiragui147@gmail.com</td>
             <td>
-              <button>Detalhes</button>
+              <button onClick={handleOpenModal}>Detalhes</button>
             </td>
           </tr>
           <tr>
@@ -86,12 +101,14 @@ const BuscarTable = () => {
             <td>Guilherme Vieira</td>
             <td>vieiragui147@gmail.com</td>
             <td>
-              <button>Detalhes</button>
+              <button onClick={handleOpenModal}>Detalhes</button>
             </td>
           </tr>
         </tbody>
       </Table>
     </TableContainer>
+    </>
+  
   );
 };
 
