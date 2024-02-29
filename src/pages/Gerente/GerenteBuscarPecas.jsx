@@ -1,10 +1,9 @@
-import React from "react";
-import BuscarPecasTable from "../../components/BuscarPecasTable";
+import TablePecas from "../../components/Tables/TablePecas";
 
 const GerenteBuscarPecas = () => {
   return (
     <div>
-      <BuscarPecasTable />
+      <TablePecas />
     </div>
   );
 };

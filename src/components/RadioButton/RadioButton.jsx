@@ -3,7 +3,7 @@ import style from "./RadioButton.module.css";
 
 const RadioButton = ({ label, value, checked, onChange }) => {
   const handleLabelClick = (event) => {
-    event.preventDefault(); // Evita o comportamento padrão de subir a página
+    event.preventDefault(); 
     if (!checked) {
       onChange && onChange(!checked);
     }

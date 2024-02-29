@@ -1,8 +1,7 @@
-import React from "react";
-import HistoricoTable from "../../components/HistoricoTable";
+import TableHistoricoPecas from "../../components/Tables/TableHistoricoPecas";
 
 const DefensorHistoricoPecas = () => {
-  return <HistoricoTable />;
+  return <TableHistoricoPecas />;
 };
 
 export default DefensorHistoricoPecas;

@@ -19,36 +19,17 @@ import GerenteBuscarDefensores from "./pages/Gerente/GerenteBuscarDefensores.jsx
 import GerenteBuscarCorregedores from "./pages/Gerente/GerenteBuscarCorregedores.jsx";
 import GerenteBuscarPecas from "./pages/Gerente/GerenteBuscarPecas.jsx";
 import GerenteBuscarTriagens from "./pages/Gerente/GerenteBuscarTriagens.jsx";
-import GerenteBuscarRecursos from "./pages/Gerente/GerenteBuscarRecursos.jsx";
-// import HistoricoDefensor from "./pages/Defensor/Historico.jsx";
-// import EnviarPecas from "./pages/Defensor/EnviarPecas.jsx";
-
-// //Avaliador
-// import Avaliador from "./pages/Avaliador/Avaliador.jsx";
-// import HistoricoAvaliador from "./pages/Avaliador/Historico.jsx";
-// import PecasPendentes from "./pages/Avaliador/PecasPendentes.jsx";
-// import Avaliacao from "./pages/Avaliador/Avaliacao.jsx";
-
-// //Gerente
-// import Gerente from "./pages/Gerente/Home/Gerente.jsx";
-// import CadastrosPendentes from "./pages/Gerente/CadastrosPendentes/CadastrosPendentes.jsx";
-// import GerenteBuscarPecas from "./pages/Gerente/BuscarPecas/GerenteBuscarPecas.jsx";
-// import GerenteBuscarTriagens from "./pages/Gerente/BuscarTriagens/GerenteBuscarTriagens.jsx";
-// import GerenteBuscarRecursos from "./pages/Gerente/BuscarRecursos/GerenteBuscarRecursos.jsx";
-// import GerenteBuscarAvaliadores from "./pages/Gerente/BuscarAvaliadores/GerenteBuscarAvaliadores.jsx";
-// import { AuthProvider } from "./context/authContext.jsx";
 
 function App() {
   return (
     <div>
-      {/* <AuthProvider> */}
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route
             path="/defensor/home"
             element={
-              <Layout>
+              <Layout role="defensor">
                 <Defensor />
               </Layout>
             }
@@ -158,17 +139,8 @@ function App() {
               </Layout>
             }
           />
-          <Route
-            path="/gerente/buscar/recursos"
-            element={
-              <Layout role="gerente">
-                <GerenteBuscarRecursos />
-              </Layout>
-            }
-          />
         </Routes>
       </Router>
-      {/* </AuthProvider> */}
     </div>
   );
 }

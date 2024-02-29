@@ -1,10 +1,9 @@
-import React from "react";
-import AprovarTable from "../../components/AprovarTable";
+import TableCadastroPendentes from "../../components/Tables/TableCadastroPendentes";
 
 const GerenteAprovarAvaliador = () => {
   return (
     <div>
-      <AprovarTable/>
+      <TableCadastroPendentes />
     </div>
   );
 };

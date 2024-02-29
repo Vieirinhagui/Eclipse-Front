@@ -1,4 +1,3 @@
-import { BarChart4, Files } from "lucide-react";
 import React from "react";
 import styled from "styled-components";
 
@@ -54,7 +53,7 @@ const GerenteHome = () => {
       <ConteudoCard>
         <img width="70px" src="/Avaliador.svg" />
         <div>
-        <p>
+          <p>
             <strong>Avaliadores</strong>
           </p>
           <p>
@@ -66,7 +65,7 @@ const GerenteHome = () => {
       <ConteudoCard>
         <img width="70px" src="/Corregedor.svg" />
         <div>
-        <p>
+          <p>
             <strong>Corregedores</strong>
           </p>
           <p>

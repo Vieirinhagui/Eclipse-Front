@@ -1,10 +1,8 @@
-import React from "react";
-import BuscarTable from "../../components/BuscarTable";
-
+import TableUsuarios from "../../components/Tables/TableUsuarios";
 const GerenteBuscarDefensores = () => {
   return (
     <div>
-      <BuscarTable />
+      <TableUsuarios />
     </div>
   );
 };
