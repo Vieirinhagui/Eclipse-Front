@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ModalPecas from "../Modais/ModalPecas";
 
 const TableContainer = styled.div`
   width: auto;
@@ -59,8 +60,17 @@ const Button = styled.button`
   }
 `;
 const TablePecas = () => {
+  const [detalhesId, setDetalhes] = useState(null);
+
+  const handleDetalhes = (id) => {
+    setDetalhes(id);
+  };
+  const handleCloseModal = () => {
+    setDetalhes(false);
+  };
   return (
     <TableContainer>
+      {detalhesId && <ModalPecas id={detalhesId} onClose={handleCloseModal} />}
       <Table>
         <thead>
           <TableRow>
@@ -80,7 +90,7 @@ const TablePecas = () => {
             <TableData>Pendente</TableData>
             <TableData>--/10</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button onClick={() => handleDetalhes(1)}>Detalhes</Button>
             </TableData>
           </TableRow>
           <TableRow>
@@ -90,7 +100,7 @@ const TablePecas = () => {
             <TableData>Aprovada</TableData>
             <TableData>10/10</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button onClick={() => handleDetalhes(1)}>Detalhes</Button>
             </TableData>
           </TableRow>
           <TableRow>
@@ -100,7 +110,7 @@ const TablePecas = () => {
             <TableData>Reprovado</TableData>
             <TableData>6/10</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button onClick={() => handleDetalhes(1)}>Detalhes</Button>
             </TableData>
           </TableRow>
         </tbody>

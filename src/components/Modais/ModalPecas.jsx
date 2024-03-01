@@ -70,12 +70,12 @@ const ButtonStyled = styled.button`
     background-color: #48744d;
   }
 `;
-const ModalPecas = () => {
+const ModalPecas = ({ onClose, id }) => {
   return (
     <BackgroundContainer>
       <ModalContainer>
         <HeaderModalContainer>
-          <X size={32} />
+          <X size={32} onClick={onClose} style={{ cursor: "pointer" }} />
         </HeaderModalContainer>
         <BodyModalContainer>
           <ButtonsContainer>

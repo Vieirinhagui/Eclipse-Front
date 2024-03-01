@@ -97,12 +97,12 @@ const ButtonTriagem = styled.button`
       props.color == "#00a010" ? "#48744d" : "#db5656"};
   }
 `;
-const ModalTriagem = () => {
+const ModalTriagem = ({ onClose, id }) => {
   return (
     <BackgroundContainer>
       <ModalContainer>
         <HeaderModalContainer>
-          <X size={32} />
+          <X size={32} onClick={onClose} style={{ cursor: "pointer" }} />
         </HeaderModalContainer>
         <BodyModalContainer>
           <ButtonsContainer>

@@ -72,32 +72,24 @@ const TablePecas = () => {
         <tbody>
           <TableRow>
             <TableData>123456789</TableData>
-            <TableData>Guilherme Vieira</TableData>
             <TableData>Cívil</TableData>
-            <TableData>Pendente</TableData>
-            <TableData>--/10</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              {/* PRECISA NAVEGAR PARA PAGINA DE AVALIAÇÃO E ABRIR A PEÇA */}
+              <Button>Avaliar</Button>
             </TableData>
           </TableRow>
           <TableRow>
             <TableData>123456789</TableData>
-            <TableData>Guilherme Vieira</TableData>
             <TableData>Cívil</TableData>
-            <TableData>Aprovada</TableData>
-            <TableData>10/10</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button>Avaliar</Button>
             </TableData>
           </TableRow>
           <TableRow>
             <TableData>123456789</TableData>
-            <TableData>Guilherme Vieira</TableData>
             <TableData>Cívil</TableData>
-            <TableData>Reprovado</TableData>
-            <TableData>6/10</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button>Avaliar</Button>
             </TableData>
           </TableRow>
         </tbody>

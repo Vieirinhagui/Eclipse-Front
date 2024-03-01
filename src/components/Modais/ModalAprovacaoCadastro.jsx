@@ -67,7 +67,7 @@ const ButtonStyled = styled.button`
   font-size: 18px;
   cursor: pointer;
 `;
-const ModalAprovacaoCadastro = () => {
+const ModalAprovacaoCadastro = ({ onClose, id }) => {
   return (
     <BackgroundContainer>
       <ModalContainer>
@@ -76,7 +76,9 @@ const ModalAprovacaoCadastro = () => {
           <AlertCircle size={100} color="#345237" />
           <ButtonsContainer>
             <ButtonStyled color="#00a010">Aprovar Cadastro</ButtonStyled>
-            <ButtonStyled color="#DD3333">Cancelar</ButtonStyled>
+            <ButtonStyled color="#DD3333" onClick={onClose}>
+              Cancelar
+            </ButtonStyled>
           </ButtonsContainer>
         </BodyModalContainer>
       </ModalContainer>

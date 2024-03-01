@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ModalTriagem from "../Modais/ModalTriagem";
 
 const TableContainer = styled.div`
   width: auto;
@@ -59,8 +60,19 @@ const Button = styled.button`
   }
 `;
 const TableTriagem = () => {
+  const [detalhesId, setDetalhes] = useState(null);
+
+  const handleDetalhes = (id) => {
+    setDetalhes(id);
+  };
+  const handleCloseModal = () => {
+    setDetalhes(false);
+  };
   return (
     <TableContainer>
+      {detalhesId && (
+        <ModalTriagem id={detalhesId} onClose={handleCloseModal} />
+      )}
       <Table>
         <thead>
           <TableRow>
@@ -76,7 +88,7 @@ const TableTriagem = () => {
             <TableData>Guilherme Vieira</TableData>
             <TableData>Cívil</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button onClick={() => handleDetalhes(1)}>Aprovar</Button>
             </TableData>
           </TableRow>
           <TableRow>

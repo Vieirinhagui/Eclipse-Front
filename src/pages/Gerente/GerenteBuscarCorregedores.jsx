@@ -2,7 +2,7 @@ import TableUsuarios from "../../components/Tables/TableUsuarios";
 const GerenteBuscarCorregedores = () => {
   return (
     <div>
-      <TableUsuarios />
+      <TableUsuarios corregedor={true}/>
     </div>
   );
 };

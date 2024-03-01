@@ -68,7 +68,7 @@ const TableHistoricoPecas = () => {
             <th>Área da Peça</th>
             <th>Status Avaliação</th>
             <th>Nota</th>
-            <th>Ação</th>
+            <th>Baixar</th>
           </TableRow>
         </thead>
         <tbody>
@@ -78,7 +78,7 @@ const TableHistoricoPecas = () => {
             <TableData>Pendente</TableData>
             <TableData>--/10</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button>Avaliação</Button>
             </TableData>
           </TableRow>
           <TableRow>
@@ -87,7 +87,7 @@ const TableHistoricoPecas = () => {
             <TableData>Aprovada</TableData>
             <TableData>10/10</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button>Avaliação</Button>
             </TableData>
           </TableRow>
           <TableRow>
@@ -96,7 +96,7 @@ const TableHistoricoPecas = () => {
             <TableData>Reprovado</TableData>
             <TableData>6/10</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button>Avaliação</Button>
             </TableData>
           </TableRow>
         </tbody>

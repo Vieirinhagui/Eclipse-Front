@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ModalAcoes from "../Modais/ModalAcoes";
 
 const TableContainer = styled.div`
   width: auto;
@@ -58,9 +59,24 @@ const Button = styled.button`
     background-color: #416b44;
   }
 `;
-const TableUsuarios = () => {
+const TableUsuarios = ({ corregedor }) => {
+  const [detalhesId, setDetalhes] = useState(null);
+
+  const handleDetalhes = (id) => {
+    setDetalhes(id);
+  };
+  const handleCloseModal = () => {
+    setDetalhes(false);
+  };
   return (
     <TableContainer>
+      {detalhesId && (
+        <ModalAcoes
+          id={detalhesId}
+          corregedor={corregedor}
+          onClose={handleCloseModal}
+        />
+      )}
       <Table>
         <thead>
           <TableRow>
@@ -76,7 +92,7 @@ const TableUsuarios = () => {
             <TableData>Guilherme Vieira</TableData>
             <TableData>vieiragui147@gmail.com</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button onClick={() => handleDetalhes(1)}>Detalhes</Button>
             </TableData>
           </TableRow>
           <TableRow>
@@ -84,7 +100,7 @@ const TableUsuarios = () => {
             <TableData>Guilherme Vieira</TableData>
             <TableData>vieiragui147@gmail.com</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button onClick={() => handleDetalhes(1)}>Detalhes</Button>
             </TableData>
           </TableRow>
           <TableRow>
@@ -92,7 +108,7 @@ const TableUsuarios = () => {
             <TableData>Guilherme Vieira</TableData>
             <TableData>vieiragui147@gmail.com</TableData>
             <TableData>
-              <Button>Aprovar</Button>
+              <Button onClick={() => handleDetalhes(1)}>Detalhes</Button>
             </TableData>
           </TableRow>
         </tbody>

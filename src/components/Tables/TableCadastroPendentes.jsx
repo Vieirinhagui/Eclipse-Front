@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ModalAprovacaoCadastro from "../Modais/ModalAprovacaoCadastro";
 
 const TableContainer = styled.div`
   width: auto;
@@ -18,7 +19,7 @@ const TableContainer = styled.div`
 const Table = styled.table`
   width: 100%;
   th,
-  TableData:nth-child(3) {
+  td {
     width: 60%;
   }
 `;
@@ -34,15 +35,11 @@ const TableRow = styled.tr`
   &:nth-child(even) {
     background-color: #ececec;
   }
-  th {
+  th,
+  td {
     flex: 1;
     text-align: center;
   }
-`;
-
-const TableData = styled.td`
-  flex: 1;
-  text-align: center;
 `;
 
 const Button = styled.button`
@@ -58,9 +55,22 @@ const Button = styled.button`
     background-color: #416b44;
   }
 `;
+
 const TableCadastrosPendentes = () => {
+  const [aprovarId, setAprovarId] = useState(null);
+
+  const handleAprovar = (id) => {
+    
+    setAprovarId(id);
+  };
+  const handleCloseModal = () => {
+    setAprovarId(false);
+  };
   return (
     <TableContainer>
+      {aprovarId && (
+        <ModalAprovacaoCadastro id={aprovarId} onClose={handleCloseModal} />
+      )}
       <Table>
         <thead>
           <TableRow>
@@ -72,28 +82,28 @@ const TableCadastrosPendentes = () => {
         </thead>
         <tbody>
           <TableRow>
-            <TableData>AVA001</TableData>
-            <TableData>Guilherme Vieira</TableData>
-            <TableData>vieiragui147@gmail.com</TableData>
-            <TableData>
-              <Button>Aprovar</Button>
-            </TableData>
+            <td>AVA001</td>
+            <td>Guilherme Vieira</td>
+            <td>vieiragui147@gmail.com</td>
+            <td>
+              <Button onClick={() => handleAprovar(1)}>Aprovar</Button>
+            </td>
           </TableRow>
           <TableRow>
-            <TableData>AVA001</TableData>
-            <TableData>Guilherme Vieira</TableData>
-            <TableData>vieiragui147@gmail.com</TableData>
-            <TableData>
-              <Button>Aprovar</Button>
-            </TableData>
+            <td>AVA002</td>
+            <td>João Silva</td>
+            <td>joaosilva@example.com</td>
+            <td>
+              <Button onClick={() => handleAprovar(2)}>Aprovar</Button>
+            </td>
           </TableRow>
           <TableRow>
-            <TableData>DEF001</TableData>
-            <TableData>Guilherme Vieira</TableData>
-            <TableData>vieiragui147@gmail.com</TableData>
-            <TableData>
-              <Button>Aprovar</Button>
-            </TableData>
+            <td>DEF001</td>
+            <td>Maria Oliveira</td>
+            <td>mariaoliveira@example.com</td>
+            <td>
+              <Button onClick={() => handleAprovar(3)}>Aprovar</Button>
+            </td>
           </TableRow>
         </tbody>
       </Table>

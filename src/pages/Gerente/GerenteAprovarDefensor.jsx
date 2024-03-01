@@ -3,7 +3,7 @@ import TableCadastroPendentes from "../../components/Tables/TableCadastroPendent
 const GerenteAprovarDefensor = () => {
   return (
     <div>
-      <TableCadastroPendentes />
+      <TableCadastroPendentes corregedor={false} />
     </div>
   );
 };

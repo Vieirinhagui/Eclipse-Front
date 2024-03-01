@@ -70,18 +70,18 @@ const ButtonStyled = styled.button`
     background-color: #48744d;
   }
 `;
-const ModalAcoes = ({ corregedor }) => {
+const ModalAcoes = ({ onClose, id, corregedor }) => {
   return (
     <BackgroundContainer>
       <ModalContainer>
         <HeaderModalContainer>
-          <X size={32} />
+          <X size={32} onClick={onClose} style={{ cursor: "pointer" }} />
         </HeaderModalContainer>
         <BodyModalContainer>
           <ButtonsContainer>
             <ButtonStyled>Inativar Conta</ButtonStyled>
             <ButtonStyled>Resetar Senha</ButtonStyled>
-            {corregedor && <ButtonStyled>Ver Peças</ButtonStyled>}
+            {!corregedor && <ButtonStyled>Ver Peças</ButtonStyled>}
           </ButtonsContainer>
         </BodyModalContainer>
       </ModalContainer>
